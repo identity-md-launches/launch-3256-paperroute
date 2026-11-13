@@ -42,7 +42,7 @@ abstract contract PaperRouteBase is Test {
     function publishIssue() internal returns (uint256 id) {
         IMDDaily.IssueInput memory input = IMDDaily.IssueInput({
             title: "The IMD Daily",
-            editorialDate: block.timestamp,
+            editorialDate: vm.getBlockTimestamp(),
             pdfURL: "ipfs://pdf",
             coverURL: "ipfs://cover",
             metadataURI: "ipfs://meta",
