@@ -1,0 +1,10 @@
+{
+  "kind": "evm_contracts",
+  "contracts": [
+    {
+      "contract": "PaperRoute",
+      "constructorArgs": []
+    }
+  ],
+  "notes": "PaperRoute is a subscription to The IMD Daily on Ethereum mainnet. It declares no constructor, so it takes no arguments: IMD (0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7) and The IMD Daily ERC-1155 (0xb8fd2b7fb37cbf03a26b4c4688ed5cce86c0a9c5) are compile-time constants, as are the prices (0.125 IMD an edition: 0.1 IMD for the copy, 0.025 IMD tip to the deliverer), the 20-hour delivery interval and the per-mint gas allowance. Deployment makes no external call and sends no ETH. PaperRoute has no owner, admin, maker fee, pause or upgrade, and needs no call after deployment, so $owner is not used. subscribe(editions) pulls editions x 0.125 IMD; cancel() refunds unused editions in full; deliver(issueId, subscribers) is open to anyone, mints one copy of an open issue to each due subscriber, and pays the caller 0.025 IMD per copy. This launch has no token, pool, NFT collection or liquidity."
+}
